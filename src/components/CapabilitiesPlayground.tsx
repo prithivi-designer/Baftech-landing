@@ -327,14 +327,14 @@ export async function executePrivateInference(prompt: string) {
                     </span>
                   </div>
 
-                  <div className="relative w-full h-48 rounded-2xl overflow-hidden border border-white/15">
+                  <div className="relative w-full h-56 rounded-2xl overflow-hidden border border-white/15">
                     <Image
-                      src="/images/chatgpt-preview.png"
+                      src="/images/ai-generation-preview.jpg"
                       alt="AI Image Generation Preview"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
-                    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] text-white border border-white/20 font-semibold">
+                    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] text-white border border-white/20 font-semibold font-mono">
                       Visual Generator Engine v2.4
                     </div>
                   </div>
