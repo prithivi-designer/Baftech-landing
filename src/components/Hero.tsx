@@ -51,19 +51,19 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
             </span>
             <span className="text-xs md:text-sm text-white font-geist tracking-wide font-medium">
-              {siteConfig.tagline}
+              {siteConfig.name}
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6 font-urbanist drop-shadow-2xl">
-            Building Practical AI
+            Building AI Products
             <br />
-            <span className="text-gradient">For The Next Generation</span>
+            <span className="text-gradient">for the Next Generation</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-zinc-200 max-w-2xl mx-auto leading-relaxed mb-10 font-geist drop-shadow-md">
+          <p className="text-base sm:text-lg md:text-xl text-zinc-200 max-w-3xl mx-auto leading-relaxed mb-10 font-geist drop-shadow-md">
             {siteConfig.description}
           </p>
 
@@ -73,7 +73,7 @@ export default function Hero() {
               href="#openchat"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-black text-base px-8 py-3.5 rounded-full font-semibold hover:bg-zinc-200 active:scale-95 transition-all duration-200 shadow-glow"
             >
-              <span>Explore Our Products</span>
+              <span>{siteConfig.cta}</span>
               <ArrowRight className="w-4 h-4" />
             </a>
 
@@ -85,15 +85,15 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Trust Value Points Bar - Pure Monochrome & High Contrast */}
+          {/* Trust Value Points Bar */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full max-w-4xl pt-6 border-t border-white/20">
             <div className="glass-panel p-4 rounded-2xl flex items-center gap-3.5 text-left border border-white/15 bg-black/50 backdrop-blur-xl">
               <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
                 <EyeOff className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-xs font-bold text-white">0% Data Retention</div>
-                <div className="text-[11px] text-zinc-300">Zero persistent conversation logs</div>
+                <div className="text-xs font-bold text-white">Privacy</div>
+                <div className="text-[11px] text-zinc-300">Data protection at the core</div>
               </div>
             </div>
 
@@ -102,8 +102,8 @@ export default function Hero() {
                 <ShieldCheck className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-xs font-bold text-white">End-to-End Control</div>
-                <div className="text-[11px] text-zinc-300">Client-side security first</div>
+                <div className="text-xs font-bold text-white">User Control</div>
+                <div className="text-[11px] text-zinc-300">Greater visibility & ownership</div>
               </div>
             </div>
 
@@ -112,8 +112,8 @@ export default function Hero() {
                 <Cpu className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-xs font-bold text-white">Multi-Model AI</div>
-                <div className="text-[11px] text-zinc-300">Frontier LLMs unified</div>
+                <div className="text-xs font-bold text-white">Accessibility</div>
+                <div className="text-[11px] text-zinc-300">Advanced AI made simple</div>
               </div>
             </div>
 
@@ -122,8 +122,8 @@ export default function Hero() {
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
               <div>
-                <div className="text-xs font-bold text-white">Instant Access</div>
-                <div className="text-[11px] text-zinc-300">No account required to start</div>
+                <div className="text-xs font-bold text-white">Useful Tools</div>
+                <div className="text-[11px] text-zinc-300">For users & businesses</div>
               </div>
             </div>
           </div>

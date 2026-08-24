@@ -3,9 +3,9 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import OpenChatHero from "@/components/OpenChatHero";
 import AboutSection from "@/components/AboutSection";
 import WhatWeBuild from "@/components/WhatWeBuild";
+import OpenChatHero from "@/components/OpenChatHero";
 import CapabilitiesPlayground from "@/components/CapabilitiesPlayground";
 import PrivacySection from "@/components/PrivacySection";
 import WorkflowsSection from "@/components/WorkflowsSection";
@@ -18,38 +18,38 @@ export default function Home() {
   const [legalModalType, setLegalModalType] = useState<"privacy" | "terms" | null>(null);
 
   return (
-    <main className="min-h-screen bg-black text-white relative selection:bg-indigo-600 selection:text-white">
+    <main className="min-h-screen bg-black text-white relative selection:bg-white selection:text-black">
       {/* Navigation Header */}
       <Navbar />
 
-      {/* Brand Hero Introduction */}
+      {/* 1. Brand Hero */}
       <Hero />
 
-      {/* Flagship OpenChat Hero Section (Exact Figma Spec & Artwork) */}
-      <OpenChatHero />
-
-      {/* About BAFtech & Practical AI Products */}
+      {/* 2. About BAFtech */}
       <AboutSection />
 
-      {/* Core Offerings Bento Grid (What We Build) */}
+      {/* 3. What We Build */}
       <WhatWeBuild />
 
-      {/* Interactive 8-Capability Live Lab */}
+      {/* 4. Our Products: OpenChat */}
+      <OpenChatHero />
+
+      {/* 5. OpenChat Capabilities */}
       <CapabilitiesPlayground />
 
-      {/* Privacy by Design & Security Architecture */}
+      {/* 6. Privacy by Design */}
       <PrivacySection />
 
-      {/* Built for More Than Chat (Workflows & Outcomes) */}
+      {/* 7. Built for More Than Chat */}
       <WorkflowsSection />
 
-      {/* Our Approach (Privacy, Intelligence, Control) */}
+      {/* 8. Our Approach */}
       <PhilosophySection />
 
-      {/* Contact & Business Enquiries Form */}
+      {/* 9. Get in Touch */}
       <ContactSection />
 
-      {/* Footer */}
+      {/* 10. Footer */}
       <Footer onOpenLegal={(type) => setLegalModalType(type)} />
 
       {/* Legal Dialog Modals */}

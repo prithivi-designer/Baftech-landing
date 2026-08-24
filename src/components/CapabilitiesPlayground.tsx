@@ -382,7 +382,7 @@ export async function executePrivateInference(prompt: string) {
                   <div className="p-3.5 bg-black rounded-2xl border border-white/15 flex items-center gap-2 text-xs">
                     <Search className="w-4 h-4 text-white shrink-0" />
                     <span className="text-white font-medium truncate">
-                      "Latest advances in confidential AI computing 2026"
+                      "Latest advances in confidential AI computing"
                     </span>
                   </div>
 
@@ -448,17 +448,12 @@ export async function executePrivateInference(prompt: string) {
               )}
             </div>
 
-            {/* Feature Highlights Footer */}
-            <div className="pt-6 mt-6 border-t border-white/15 flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono text-zinc-400 mr-2 font-semibold">Key Highlights:</span>
-              {currentCapability.highlights.map((h, i) => (
-                <span
-                  key={i}
-                  className="text-xs text-white bg-white/10 border border-white/20 px-3.5 py-1 rounded-full font-geist font-medium"
-                >
-                  {h}
-                </span>
-              ))}
+            {/* Feature Status Footer */}
+            <div className="pt-6 mt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-2">
+              <span className="text-xs font-mono text-zinc-400 font-medium">Capability 0{openChatCapabilities.findIndex(c => c.id === currentCapability.id) + 1} of 0{openChatCapabilities.length}</span>
+              <span className="text-xs text-white bg-white/10 border border-white/20 px-3.5 py-1 rounded-full font-geist font-medium">
+                {currentCapability.title}
+              </span>
             </div>
           </div>
         </div>

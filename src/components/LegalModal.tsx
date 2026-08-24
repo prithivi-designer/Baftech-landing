@@ -14,26 +14,27 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-fadeIn">
-      <div className="glass-panel w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 border border-white/15 flex flex-col justify-between shadow-2xl relative">
+      <div className="glass-panel w-full max-w-2xl max-h-[85vh] rounded-3xl p-6 sm:p-8 border border-white/15 flex flex-col justify-between shadow-2xl relative bg-[#050505]">
         {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-zinc-300 hover:text-white transition-colors"
+          aria-label="Close dialog"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">
-          <div className="p-2.5 rounded-xl bg-cyan-500/10 text-cyan-400">
+          <div className="p-2.5 rounded-xl bg-white/10 text-white border border-white/15">
             {type === "privacy" ? <ShieldCheck className="w-6 h-6" /> : <FileText className="w-6 h-6" />}
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white">
-              {type === "privacy" ? "Privacy Policy & Zero-Retention Charter" : "Terms of Service"}
+            <h3 className="text-xl font-bold text-white font-urbanist">
+              {type === "privacy" ? "Privacy Policy" : "Terms of Service"}
             </h3>
             <p className="text-xs text-zinc-400 font-mono">
-              Last updated: January 2026 • {siteConfig.registeredName}
+              Official Policy • {siteConfig.registeredName}
             </p>
           </div>
         </div>
@@ -42,58 +43,63 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
         <div className="overflow-y-auto space-y-4 pr-2 text-sm text-zinc-300 font-geist leading-relaxed">
           {type === "privacy" ? (
             <>
-              <h4 className="text-white font-semibold">1. Zero-Retention Principle</h4>
+              <h4 className="text-white font-semibold">1. Zero Data Retention</h4>
               <p>
-                BAFtech is architected so that prompt inputs, document uploads, and conversational outputs are processed in volatile, ephemeral execution memory. We do not persist conversation histories in long-term databases.
+                OpenChat is designed so conversations are not retained beyond what is required to provide the service. Prompt inputs, document uploads, and conversational outputs are processed in volatile memory.
               </p>
 
-              <h4 className="text-white font-semibold">2. Hardware Isolation (TEE)</h4>
+              <h4 className="text-white font-semibold">2. Encryption</h4>
               <p>
-                Workloads executed via confidential computing hardware enclaves (Trusted Execution Environments) are cryptographically shielded from host operating systems and cloud administrators.
+                Sensitive interactions and user data are protected through end-to-end encryption in transit and rest.
               </p>
 
-              <h4 className="text-white font-semibold">3. No Model Training on User Data</h4>
+              <h4 className="text-white font-semibold">3. Client-Side Control</h4>
               <p>
-                Your interactions are never harvested, licensed, or used to fine-tune foundation models. Your data remains strictly your sovereign intellectual asset.
+                OpenChat gives users greater control over their conversations and data instead of treating user interactions as data to be collected indefinitely.
               </p>
 
-              <h4 className="text-white font-semibold">4. Client-Side Control & Purge</h4>
+              <h4 className="text-white font-semibold">4. Confidential Computing</h4>
               <p>
-                All conversational state resides inside your local browser session storage. You can irreversibly clear and purge your session cache at any time with a single click.
+                Trusted Execution Environment (TEE) technology can be used for supported workloads to provide additional protection while AI requests are being processed.
+              </p>
+
+              <h4 className="text-white font-semibold">5. No Account Required</h4>
+              <p>
+                Users can begin interacting with OpenChat without being forced through a traditional account creation process.
               </p>
             </>
           ) : (
             <>
               <h4 className="text-white font-semibold">1. Acceptance of Terms</h4>
               <p>
-                By accessing or using BAFtech platforms and the OpenChat interface, you agree to adhere to these Terms of Service. If you disagree, you must cease usage immediately.
+                By accessing and utilizing BAFtech services and OpenChat, you agree to comply with these terms of use.
               </p>
 
-              <h4 className="text-white font-semibold">2. Responsible AI Usage</h4>
+              <h4 className="text-white font-semibold">2. Permitted Use</h4>
               <p>
-                Users agree not to utilize BAFtech services to generate malicious software, engage in unauthorized vulnerability scanning, bypass security controls, or produce unlawful material.
+                You may use our generative AI tools for lawful professional, research, development, and creative purposes without violating applicable regulatory frameworks.
               </p>
 
               <h4 className="text-white font-semibold">3. Intellectual Property</h4>
               <p>
-                You retain full copyright and ownership rights to all prompt inputs and generated outputs produced via OpenChat to the maximum extent permitted by applicable laws.
+                You retain full rights and ownership over all original content, prompts, and outputs generated through your OpenChat sessions.
               </p>
 
-              <h4 className="text-white font-semibold">4. Disclaimer of Warranties</h4>
+              <h4 className="text-white font-semibold">4. Availability & Reliability</h4>
               <p>
-                Services are provided on an "as is" and "as available" basis. AI-generated outputs should be reviewed and verified by qualified professionals prior to critical deployment.
+                We strive for maximum system availability and minimal latency across all supported frontier models.
               </p>
             </>
           )}
         </div>
 
         {/* Modal Footer */}
-        <div className="pt-6 mt-6 border-t border-white/10 flex justify-end">
+        <div className="pt-6 border-t border-white/10 mt-6 flex justify-end">
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-full bg-white text-black font-medium text-xs hover:bg-white/90 transition-colors"
+            className="px-6 py-2.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-zinc-200 transition-colors shadow-glow-sm"
           >
-            Acknowledge & Close
+            Close
           </button>
         </div>
       </div>

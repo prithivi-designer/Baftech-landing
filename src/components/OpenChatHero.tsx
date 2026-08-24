@@ -16,10 +16,10 @@ export default function OpenChatHero() {
         <div className="flex items-center gap-2 mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/15 text-xs font-mono text-white">
             <Sparkles className="w-3.5 h-3.5 text-white" />
-            <span>FLAGSHIP PRODUCT</span>
+            <span>{openChatDetails.sectionTitle.toUpperCase()}</span>
           </div>
           <span className="text-xs text-zinc-600 font-mono">|</span>
-          <span className="text-xs text-zinc-400 font-mono">Private Generative AI Platform</span>
+          <span className="text-xs text-zinc-300 font-mono">{openChatDetails.headline}</span>
         </div>
 
         {/* Content Section - Exact Figma Layout */}
@@ -45,7 +45,7 @@ export default function OpenChatHero() {
                 href="#capabilities"
                 className="inline-flex items-center gap-2 bg-white text-black text-[16px] px-8 py-3.5 rounded-full font-medium hover:bg-zinc-200 active:scale-95 transition-all duration-200 shadow-glow"
               >
-                <span>Explore OpenChat</span>
+                <span>{openChatDetails.cta}</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -58,6 +58,23 @@ export default function OpenChatHero() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Detailed Product Copy Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {openChatDetails.paragraphs.map((p, i) => (
+            <div
+              key={i}
+              className="glass-panel p-6 rounded-3xl border border-white/15 bg-white/[0.02]"
+            >
+              <div className="text-xs font-mono text-zinc-400 mb-2 font-semibold">
+                Feature Point 0{i + 1}
+              </div>
+              <p className="text-sm sm:text-base text-zinc-200 font-geist leading-relaxed">
+                {p}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Hero Curved Viewport Artwork - Top-Only 77px Border Radius matching Figma */}
@@ -89,12 +106,12 @@ export default function OpenChatHero() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
           </div>
 
-          {/* Floating Live Indicator Tag in artwork - Monochromatic */}
+          {/* Floating Live Indicator Tag in artwork */}
           <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <div className="glass-panel px-4 py-2 rounded-2xl flex items-center gap-2.5 backdrop-blur-xl border border-white/15">
               <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
               <span className="text-xs md:text-sm font-medium text-white font-geist">
-                TEE-Encrypted Compute Active
+                Private AI Platform Active
               </span>
             </div>
 
