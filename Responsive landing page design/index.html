@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenChat | AI for Smarter Work and Creation</title>
+    <meta name="description" content="Create, analyze, code, explore ideas, and automate workflows with OpenChat, a generative AI platform built for intelligent, natural conversations." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Urbanist:wght@200;600&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      @font-face {
+        font-family: 'Geist';
+        src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+        font-weight: 100 900;
+        font-style: normal;
+      }
+
+      body {
+        background: #000;
+        min-height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+        font-family: 'Geist', sans-serif;
+      }
+
+      .page {
+        position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Background images */
+      .bg-desktop, .bg-mobile {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+      }
+      .bg-desktop {
+        height: 60%;
+        border-radius: 77px 77px 0 0;
+        display: none;
+      }
+      .bg-mobile {
+        height: 58%;
+      }
+      .bg-desktop img, .bg-mobile img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+
+      /* Nav */
+      nav {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        padding: 20px 16px;
+      }
+      .logo {
+        color: #fff;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-size: 28px;
+        font-weight: 400;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      /* Hero */
+      section.hero {
+        position: relative;
+        z-index: 10;
+        padding: 32px 16px 340px;
+      }
+      .hero-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      h1 {
+        color: #fff;
+        font-family: 'Urbanist', sans-serif;
+        font-size: clamp(52px, 14vw, 136px);
+        line-height: 1;
+        width: 100%;
+      }
+      h1 .open { font-weight: 600; }
+      h1 .chat  { font-weight: 200; }
+
+      .desc-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        width: 100%;
+      }
+      .desc-col p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.6;
+        text-shadow: 0px 4px 7px rgba(0,0,0,0.45);
+        width: 100%;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        color: #000;
+        font-family: 'Geist', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 14px 28px;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .btn:hover { background: rgba(255,255,255,0.9); }
+
+      /* Desktop */
+      @media (min-width: 768px) {
+        .bg-desktop { display: block; }
+        .bg-mobile  { display: none; }
+
+        nav { padding: 24px 56px; }
+        .logo { font-size: 32px; }
+
+        section.hero { padding: 80px 56px 420px; }
+        .hero-inner {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 73px;
+        }
+        h1 { width: auto; flex-shrink: 0; }
+        .desc-col {
+          flex: 1;
+          margin-top: 16px;
+          gap: 46px;
+        }
+        .desc-col p { font-size: 20px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <!-- Background desktop -->
+      <div class="bg-desktop">
+        <img src="src/imports/desktop.png" alt="" />
+      </div>
+
+      <!-- Background mobile -->
+      <div class="bg-mobile">
+        <img src="src/imports/mobile.png" alt="" />
+      </div>
+
+      <!-- Nav -->
+      <nav>
+        <a href="#" class="logo">BAFtech</a>
+      </nav>
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-inner">
+          <h1><span class="open">Open</span><span class="chat">Chat</span></h1>
+          <div class="desc-col">
+            <p>a generative AI platform that enables users to create content, answer questions, generate code, analyze documents, and automate workflows through natural language conversations powered by large language models.</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </body>
+</html>

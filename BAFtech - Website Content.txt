@@ -1,0 +1,135 @@
+﻿BAFtech
+Building AI Products for the Next Generation
+BAFtech is an AI technology company building intelligent products that make advanced AI more accessible, private, and useful for everyday users and businesses.
+Explore Our Products
+________________
+
+
+About BAFtech
+Building Practical AI Products
+BAFtech develops AI-powered products designed around privacy, accessibility, and user control.
+Our focus is on creating intelligent applications that help people interact with AI naturally across research, content creation, coding, document analysis, image generation, voice interactions, and automated workflows.
+We build products that turn advanced AI infrastructure into simple, usable experiences.
+________________
+
+
+What We Build
+AI Applications
+Intelligent applications designed to make advanced AI capabilities accessible through simple user experiences.
+AI Agents
+AI-powered agents capable of assisting with research, content, workflows, analysis, and other everyday tasks.
+Privacy-Focused AI
+AI experiences designed with privacy, data protection, and greater user control at their core.
+Intelligent Interfaces
+Conversational and multimodal interfaces that allow users to interact with AI through text, documents, images, and voice.
+________________
+
+
+Our Products
+OpenChat
+Private AI. Powerful Models. One Interface.
+OpenChat is a privacy-focused generative AI platform that gives users access to powerful AI capabilities through a single conversational interface.
+Users can ask questions, create content, write and understand code, analyze documents, generate images, interact through voice, access real-time information, and work with AI agents.
+OpenChat is designed around user privacy and control, providing a powerful AI experience without requiring users to surrender ownership of their conversations and data.
+Explore OpenChat
+________________
+
+
+OpenChat Capabilities
+Multi-Model AI
+Access multiple AI models from one interface and use the model best suited to the task.
+AI Chat
+Ask questions, explore ideas, research topics, summarize information, and work through complex tasks using natural language.
+Document Analysis
+Upload and analyze documents, extract information, summarize content, and ask questions about files directly through chat.
+Code Generation
+Generate, explain, debug, and improve code through conversational AI.
+Image Generation
+Turn natural-language prompts into AI-generated images directly within OpenChat.
+Real-Time Voice
+Interact with AI through natural voice conversations for faster and more intuitive communication.
+Web Intelligence
+Use real-time web information when current context is required instead of relying solely on a model's existing knowledge.
+AI Agents
+Use intelligent agents capable of handling multi-step tasks and workflows.
+________________
+
+
+Privacy by Design
+Your Conversations Should Remain Yours
+OpenChat is designed with privacy and user control as fundamental product principles.
+Zero Data Retention
+OpenChat is designed so conversations are not retained beyond what is required to provide the service.
+Encryption
+Sensitive interactions and user data are protected through encryption.
+Client-Side Control
+OpenChat gives users greater control over their conversations and data instead of treating user interactions as data to be collected indefinitely.
+Confidential Computing
+Trusted Execution Environment (TEE) technology can be used for supported workloads to provide additional protection while AI requests are being processed.
+No Account Required to Start
+Users can begin interacting with OpenChat without being forced through a traditional account creation process.
+________________
+
+
+Built for More Than Chat
+OpenChat combines conversational AI with tools that allow users to move from asking a question to completing actual work.
+Research
+Find, understand, and synthesize information.
+Create
+Generate content, ideas, images, and other creative outputs.
+Build
+Write, understand, debug, and improve code.
+Analyze
+Work with documents, information, and complex topics.
+Automate
+Use AI agents to assist with multi-step workflows.
+________________
+
+
+Our Approach
+Useful AI Without Compromising User Control
+We believe AI products should be powerful without requiring users to give up control of their data.
+BAFtech is building AI experiences around three principles:
+Privacy
+Design systems that minimize unnecessary collection and retention of user data.
+Intelligence
+Give users access to capable AI models and tools for real-world tasks.
+Control
+Give users greater visibility and control over how they interact with AI.
+________________
+
+
+About BAFtech
+BAFtech is an AI technology company focused on developing intelligent software products and AI-powered applications.
+Legal Company Name:
+[INSERT EXACT REGISTERED COMPANY NAME]
+Registered Address:
+[INSERT REGISTERED COMPANY ADDRESS]
+Company Registration Number:
+[INSERT IF APPROPRIATE]
+Website:
+baftech.xyz
+Business Email:
+support@baftech.xyz
+________________
+
+
+Get in Touch
+Have a question about BAFtech, our products, partnerships, or business enquiries?
+General Enquiries
+support@baftech.xyz
+________________
+
+
+Footer
+BAFtech
+Building intelligent AI products with privacy, accessibility, and user control at their core.
+Company
+About
+Contact
+Products
+OpenChat
+Legal
+Privacy Policy
+Terms of Service
+© 2026 [EXACT REGISTERED COMPANY NAME]. All rights reserved.

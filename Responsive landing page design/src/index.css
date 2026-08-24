@@ -1,0 +1,29 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Montserrat Alternates:Regular';
+  src: url('https://static.figma.com/font/MontserratAlternates-Regular_2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Urbanist:Medium';
+  src: url('https://static.figma.com/font/Urbanist_wght__2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:Regular';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geist:Medium';
+  src: url('https://static.figma.com/font/Geist_wght__1') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
