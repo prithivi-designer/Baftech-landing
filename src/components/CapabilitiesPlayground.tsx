@@ -3,18 +3,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { openChatCapabilities } from "@/lib/content";
+import GlassIcon from "./GlassIcon";
 import {
-  Cpu,
-  MessageSquare,
-  FileText,
-  Code2,
-  Image as ImageIcon,
-  Mic,
-  Globe,
   Sparkles,
   Check,
   Copy,
   Volume2,
+  Mic,
   Terminal,
   Search,
   ArrowRight,
@@ -35,43 +30,19 @@ export default function CapabilitiesPlayground() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const getTabIcon = (iconName: string, isWhiteCard: boolean) => {
-    const iconClass = `w-4 h-4 ${isWhiteCard ? "text-white" : "text-white"}`;
-    switch (iconName) {
-      case "Cpu":
-        return <Cpu className={iconClass} />;
-      case "MessageSquare":
-        return <MessageSquare className={iconClass} />;
-      case "FileText":
-        return <FileText className={iconClass} />;
-      case "Code2":
-        return <Code2 className={iconClass} />;
-      case "Image":
-        return <ImageIcon className={iconClass} />;
-      case "Mic":
-        return <Mic className={iconClass} />;
-      case "Globe":
-        return <Globe className={iconClass} />;
-      case "Sparkle":
-        return <Sparkles className={iconClass} />;
-      default:
-        return <Sparkles className={iconClass} />;
-    }
-  };
-
   return (
     <section id="capabilities" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/10">
       {/* Subtle Neutral Glow */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[600px] bg-white/[0.02] blur-[160px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[600px] bg-indigo-500/[0.03] blur-[170px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-mono text-white mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-white" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono text-indigo-300 mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
             <span>INTERACTIVE LAB</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-5 font-urbanist">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-5 font-urbanist">
             OpenChat Capabilities
           </h2>
           <p className="text-base sm:text-lg text-zinc-300 font-geist">
@@ -92,27 +63,19 @@ export default function CapabilitiesPlayground() {
                 <button
                   key={cap.id}
                   onClick={() => setActiveTab(cap.id)}
-                  className={`w-full text-left p-4 rounded-2xl transition-all duration-200 flex items-start justify-between border ${
+                  className={`w-full text-left p-3.5 rounded-2xl transition-all duration-200 flex items-center justify-between border ${
                     isActive
-                      ? "bg-white text-black border-white shadow-2xl translate-x-1"
-                      : "bg-white/[0.04] border-white/15 text-white hover:bg-white/[0.08] hover:border-white/30"
+                      ? "bg-white text-black border-white shadow-[0_0_30px_-5px_rgba(99,102,241,0.3)] translate-x-1"
+                      : "bg-white/[0.03] border-white/15 text-white hover:bg-white/[0.06] hover:border-indigo-500/30"
                   }`}
                 >
-                  <div className="flex items-start gap-3.5">
-                    <div
-                      className={`p-2.5 rounded-xl border transition-colors ${
-                        isActive
-                          ? "bg-black border-black text-white"
-                          : "bg-white/10 border-white/20 text-white"
-                      }`}
-                    >
-                      {getTabIcon(cap.iconName, isActive)}
-                    </div>
+                  <div className="flex items-center gap-3.5">
+                    <GlassIcon type={cap.id} size="sm" />
                     <div>
                       <div className="flex items-center gap-2">
                         <span
                           className={`text-sm font-semibold ${
-                            isActive ? "text-black" : "text-white"
+                            isActive ? "text-black font-bold" : "text-white"
                           }`}
                         >
                           {cap.title}
@@ -122,7 +85,7 @@ export default function CapabilitiesPlayground() {
                             className={`text-[10px] font-mono font-medium px-2 py-0.5 rounded-full ${
                               isActive
                                 ? "bg-black text-white"
-                                : "bg-white/15 text-white border border-white/20"
+                                : "bg-indigo-500/15 text-indigo-300 border border-indigo-500/20"
                             }`}
                           >
                             {cap.badge}
@@ -130,7 +93,7 @@ export default function CapabilitiesPlayground() {
                         )}
                       </div>
                       <p
-                        className={`text-xs mt-1 line-clamp-1 font-geist ${
+                        className={`text-xs mt-0.5 line-clamp-1 font-geist ${
                           isActive ? "text-zinc-700 font-medium" : "text-zinc-400"
                         }`}
                       >
@@ -139,7 +102,7 @@ export default function CapabilitiesPlayground() {
                     </div>
                   </div>
                   <ArrowRight
-                    className={`w-4 h-4 mt-2 transition-transform shrink-0 ${
+                    className={`w-4 h-4 transition-transform shrink-0 ${
                       isActive
                         ? "text-black translate-x-0.5"
                         : "text-zinc-400 opacity-60 group-hover:opacity-100"
@@ -151,20 +114,18 @@ export default function CapabilitiesPlayground() {
           </div>
 
           {/* Right Column: Live Interactive Demo Canvas */}
-          <div className="lg:col-span-8 glass-panel rounded-3xl p-6 sm:p-8 border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[580px] shadow-2xl">
+          <div className="lg:col-span-8 glass-panel rounded-3xl p-6 sm:p-8 border border-white/15 relative overflow-hidden flex flex-col justify-between min-h-[580px] shadow-2xl bg-[#050505]">
             {/* Header info for currently active capability */}
             <div className="border-b border-white/15 pb-6 mb-6">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-white/10 border border-white/20 text-white">
-                    {getTabIcon(currentCapability.iconName, false)}
-                  </div>
+                <div className="flex items-center gap-3.5">
+                  <GlassIcon type={currentCapability.id} size="md" />
                   <h3 className="text-2xl font-bold text-white font-urbanist">
                     {currentCapability.title}
                   </h3>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-xs font-mono text-white">
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-300">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   <span>Module Active</span>
                 </div>
               </div>
@@ -190,11 +151,11 @@ export default function CapabilitiesPlayground() {
                         onClick={() => setSelectedModel(model.id)}
                         className={`p-4 rounded-2xl border text-left transition-all ${
                           selectedModel === model.id
-                            ? "bg-white text-black border-white shadow-xl"
-                            : "bg-white/[0.04] border-white/15 text-white hover:bg-white/[0.08] hover:border-white/30"
+                            ? "bg-white text-black border-white shadow-[0_0_20px_rgba(99,102,241,0.25)]"
+                            : "bg-white/[0.04] border-white/15 text-white hover:bg-white/[0.08] hover:border-indigo-500/30"
                         }`}
                       >
-                        <div className={`text-xs font-mono mb-1 ${selectedModel === model.id ? "text-zinc-600 font-semibold" : "text-zinc-400"}`}>
+                        <div className={`text-xs font-mono mb-1 ${selectedModel === model.id ? "text-indigo-600 font-semibold" : "text-indigo-300"}`}>
                           {model.provider}
                         </div>
                         <div className={`text-sm font-bold mb-2 ${selectedModel === model.id ? "text-black" : "text-white"}`}>
@@ -213,14 +174,14 @@ export default function CapabilitiesPlayground() {
                   <div className="p-4 rounded-2xl bg-black border border-white/15 space-y-3 font-mono text-xs">
                     <div className="flex items-center justify-between text-zinc-300">
                       <span>Live Model Session:</span>
-                      <span className="text-white font-bold">{selectedModel.toUpperCase()}</span>
+                      <span className="text-indigo-300 font-bold">{selectedModel.toUpperCase()}</span>
                     </div>
                     <div className="flex items-center justify-between text-zinc-300">
                       <span>Zero-Retention Privacy Mode:</span>
-                      <span className="text-white font-semibold">ENFORCED (Ephemeral Socket)</span>
+                      <span className="text-emerald-400 font-semibold">ENFORCED (Ephemeral Socket)</span>
                     </div>
-                    <div className="w-full bg-white/15 h-1.5 rounded-full overflow-hidden">
-                      <div className="bg-white h-full w-4/5 animate-pulse" />
+                    <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                      <div className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-full w-4/5 animate-pulse" />
                     </div>
                   </div>
                 </div>
@@ -231,7 +192,7 @@ export default function CapabilitiesPlayground() {
                 <div className="space-y-4">
                   <div className="p-4 rounded-2xl bg-white/[0.04] border border-white/15 space-y-3.5">
                     <div className="flex items-start gap-3">
-                      <div className="w-7 h-7 rounded-full bg-white/15 text-white flex items-center justify-center text-xs font-mono font-bold shrink-0 border border-white/20">
+                      <div className="w-7 h-7 rounded-full bg-indigo-500/20 text-indigo-300 flex items-center justify-center text-xs font-mono font-bold shrink-0 border border-indigo-500/30">
                         U
                       </div>
                       <div className="text-sm text-white font-medium">
@@ -240,7 +201,7 @@ export default function CapabilitiesPlayground() {
                     </div>
 
                     <div className="flex items-start gap-3 pt-3 border-t border-white/10">
-                      <div className="w-7 h-7 rounded-full bg-white text-black flex items-center justify-center text-xs font-bold font-mono shrink-0">
+                      <div className="w-7 h-7 rounded-full bg-white text-black flex items-center justify-center text-xs font-bold font-mono shrink-0 shadow-sm">
                         OC
                       </div>
                       <div className="text-sm text-zinc-200 leading-relaxed font-geist">
@@ -261,14 +222,16 @@ export default function CapabilitiesPlayground() {
               {/* 3. Document Analysis Demo */}
               {activeTab === "document-analysis" && (
                 <div className="space-y-4">
-                  <div className="border-2 border-dashed border-white/30 rounded-2xl p-6 text-center hover:border-white/60 transition-colors bg-white/[0.03]">
-                    <FileText className="w-10 h-10 text-white mx-auto mb-3" />
+                  <div className="border-2 border-dashed border-amber-500/30 rounded-2xl p-6 text-center hover:border-amber-500/50 transition-colors bg-amber-500/[0.02]">
+                    <div className="flex justify-center mb-3">
+                      <GlassIcon type="document" size="lg" />
+                    </div>
                     <div className="text-sm font-bold text-white">Annual_Q3_Strategic_Financials.pdf</div>
                     <div className="text-xs text-zinc-300 mt-1">Parsed 142 pages • 8 tables extracted • Confidential TEE Mode</div>
                   </div>
 
                   <div className="p-4 rounded-2xl bg-black border border-white/15 space-y-2">
-                    <div className="text-xs font-mono font-bold text-white">AUTOMATED EXTRACTED INSIGHTS:</div>
+                    <div className="text-xs font-mono font-bold text-amber-400">AUTOMATED EXTRACTED INSIGHTS:</div>
                     <div className="text-xs text-zinc-200 leading-relaxed">
                       Revenue expanded by +34% YoY with gross margins strengthening to 78.4%. R&D allocations targeted AI infrastructure acceleration.
                     </div>
@@ -281,18 +244,18 @@ export default function CapabilitiesPlayground() {
                 <div className="space-y-3 font-mono text-xs">
                   <div className="flex items-center justify-between px-4 py-2.5 bg-black rounded-t-xl border-t border-x border-white/15">
                     <div className="flex items-center gap-2 text-white font-semibold">
-                      <Terminal className="w-4 h-4 text-white" />
+                      <Terminal className="w-4 h-4 text-emerald-400" />
                       <span>secure_pipeline.ts</span>
                     </div>
                     <button
                       onClick={() => handleCopyCode(`import { createTEEContext } from '@baftech/core';\n\nexport async function executePrivateInference(prompt: string) {\n  const session = await createTEEContext({ retention: 0, encrypt: 'AES-256-GCM' });\n  return await session.infer(prompt);\n}`)}
                       className="flex items-center gap-1.5 text-[11px] text-white px-3 py-1 rounded-md bg-white/15 hover:bg-white/25 border border-white/20 font-medium transition-colors"
                     >
-                      {copied ? <Check className="w-3.5 h-3.5 text-white" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                       <span>{copied ? "Copied!" : "Copy Code"}</span>
                     </button>
                   </div>
-                  <pre className="p-4 bg-[#050505] rounded-b-xl border border-white/15 text-zinc-200 overflow-x-auto leading-relaxed">
+                  <pre className="p-4 bg-[#080808] rounded-b-xl border border-white/15 text-zinc-200 overflow-x-auto leading-relaxed">
                     <code>{`import { createTEEContext } from '@baftech/core';
 
 export async function executePrivateInference(prompt: string) {
@@ -318,11 +281,11 @@ export async function executePrivateInference(prompt: string) {
               {activeTab === "image-generation" && (
                 <div className="space-y-4">
                   <div className="p-3.5 bg-black rounded-2xl border border-white/15 flex items-center justify-between text-xs">
-                    <span className="text-zinc-400 font-mono font-semibold">Prompt:</span>
+                    <span className="text-pink-400 font-mono font-semibold">Prompt:</span>
                     <span className="text-white font-medium truncate max-w-xs sm:max-w-md">
                       "Futuristic holographic AI interface with deep obsidian glass architecture"
                     </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-white/15 text-white text-[10px] font-mono border border-white/20 font-semibold">
+                    <span className="px-2.5 py-0.5 rounded-full bg-pink-500/15 text-pink-300 text-[10px] font-mono border border-pink-500/30 font-semibold">
                       4K Ultra
                     </span>
                   </div>
@@ -348,10 +311,11 @@ export async function executePrivateInference(prompt: string) {
                     {[40, 75, 30, 90, 60, 100, 45, 80, 50, 95, 35, 70].map((h, i) => (
                       <div
                         key={i}
-                        className="w-1.5 bg-white rounded-full transition-all duration-300"
+                        className="w-1.5 rounded-full transition-all duration-300"
                         style={{
                           height: voiceActive ? `${h}%` : "15%",
                           opacity: voiceActive ? 1 : 0.4,
+                          background: voiceActive ? "linear-gradient(180deg, #818cf8 0%, #c084fc 100%)" : "#ffffff",
                         }}
                       />
                     ))}
@@ -362,7 +326,7 @@ export async function executePrivateInference(prompt: string) {
                       onClick={() => setVoiceActive(!voiceActive)}
                       className={`inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold transition-all ${
                         voiceActive
-                          ? "bg-zinc-800 text-white border border-white/40 shadow-xl"
+                          ? "bg-violet-600 text-white shadow-[0_0_25px_rgba(139,92,246,0.5)] border border-violet-400"
                           : "bg-white text-black hover:bg-zinc-200 shadow-glow"
                       }`}
                     >
@@ -380,7 +344,7 @@ export async function executePrivateInference(prompt: string) {
               {activeTab === "web-intelligence" && (
                 <div className="space-y-3">
                   <div className="p-3.5 bg-black rounded-2xl border border-white/15 flex items-center gap-2 text-xs">
-                    <Search className="w-4 h-4 text-white shrink-0" />
+                    <Search className="w-4 h-4 text-sky-400 shrink-0" />
                     <span className="text-white font-medium truncate">
                       "Latest advances in confidential AI computing"
                     </span>
@@ -391,12 +355,12 @@ export async function executePrivateInference(prompt: string) {
                       { source: "nature.com/articles", title: "Hardware-Enforced Privacy Enclaves in Multi-Tenant LLM Serving", confidence: "99.4%" },
                       { source: "arxiv.org/abs/2602", title: "Zero-Knowledge Proofs for Verifiable Foundation Model Queries", confidence: "98.7%" },
                     ].map((cit, idx) => (
-                      <div key={idx} className="p-3.5 rounded-xl bg-white/[0.04] border border-white/15 flex items-center justify-between text-xs">
+                      <div key={idx} className="p-3.5 rounded-xl bg-white/[0.04] border border-white/15 flex items-center justify-between text-xs hover:border-sky-500/30 transition-colors">
                         <div>
                           <div className="text-white font-semibold">{cit.title}</div>
-                          <div className="text-zinc-400 font-mono text-[10px] mt-0.5">{cit.source}</div>
+                          <div className="text-sky-300 font-mono text-[10px] mt-0.5">{cit.source}</div>
                         </div>
-                        <span className="px-2.5 py-1 rounded-full bg-white/15 text-white font-mono text-[10px] border border-white/20 font-bold">
+                        <span className="px-2.5 py-1 rounded-full bg-sky-500/15 text-sky-300 font-mono text-[10px] border border-sky-500/25 font-bold">
                           {cit.confidence}
                         </span>
                       </div>
@@ -419,7 +383,7 @@ export async function executePrivateInference(prompt: string) {
                         key={st.step}
                         className={`p-3.5 rounded-2xl border flex items-center justify-between text-xs transition-all ${
                           st.status === "Running"
-                            ? "bg-white/15 border-white/40 text-white shadow-glow-sm"
+                            ? "bg-purple-500/15 border-purple-500/40 text-white shadow-[0_0_20px_rgba(168,85,247,0.2)]"
                             : st.status === "Done"
                             ? "bg-white/[0.05] border-white/15 text-white"
                             : "bg-white/[0.02] border-white/10 text-zinc-400"
@@ -427,7 +391,7 @@ export async function executePrivateInference(prompt: string) {
                       >
                         <div className="flex items-center gap-3">
                           <span className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono font-bold ${
-                            st.status === "Done" ? "bg-white/20 text-white border border-white/30" : st.status === "Running" ? "bg-white text-black" : "bg-white/10 text-zinc-400"
+                            st.status === "Done" ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : st.status === "Running" ? "bg-purple-500 text-white" : "bg-white/10 text-zinc-400"
                           }`}>
                             {st.step}
                           </span>
@@ -437,7 +401,7 @@ export async function executePrivateInference(prompt: string) {
                           </div>
                         </div>
                         <span className={`font-mono text-[10px] px-2.5 py-0.5 rounded-full font-semibold ${
-                          st.status === "Done" ? "text-white bg-white/15 border border-white/20" : st.status === "Running" ? "text-white bg-white/25 border border-white/40 animate-pulse" : "text-zinc-500"
+                          st.status === "Done" ? "text-emerald-300 bg-emerald-500/15 border border-emerald-500/30" : st.status === "Running" ? "text-purple-300 bg-purple-500/25 border border-purple-500/40 animate-pulse" : "text-zinc-500"
                         }`}>
                           {st.status}
                         </span>
@@ -451,7 +415,7 @@ export async function executePrivateInference(prompt: string) {
             {/* Feature Status Footer */}
             <div className="pt-6 mt-6 border-t border-white/15 flex flex-wrap items-center justify-between gap-2">
               <span className="text-xs font-mono text-zinc-400 font-medium">Capability 0{openChatCapabilities.findIndex(c => c.id === currentCapability.id) + 1} of 0{openChatCapabilities.length}</span>
-              <span className="text-xs text-white bg-white/10 border border-white/20 px-3.5 py-1 rounded-full font-geist font-medium">
+              <span className="text-xs text-indigo-300 bg-indigo-500/10 border border-indigo-500/20 px-3.5 py-1 rounded-full font-geist font-medium">
                 {currentCapability.title}
               </span>
             </div>

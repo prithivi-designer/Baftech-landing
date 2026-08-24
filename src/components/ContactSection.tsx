@@ -29,14 +29,14 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-24 md:py-32 bg-black relative overflow-hidden border-t border-white/[0.08]">
       {/* Subtle Neutral Glow */}
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-white/[0.02] blur-[170px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[500px] bg-indigo-500/[0.03] blur-[170px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Direct Info */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-xs font-mono text-white w-fit mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-white" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono text-indigo-300 w-fit mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
               <span>{contactContent.title.toUpperCase()}</span>
             </div>
 
@@ -52,14 +52,14 @@ export default function ContactSection() {
             <div className="space-y-4">
               <a
                 href={`mailto:${contactContent.email}`}
-                className="glass-panel glass-panel-hover p-6 rounded-2xl flex items-center gap-4 border border-white/15 group"
+                className="glass-panel glass-panel-hover p-6 rounded-2xl flex items-center gap-4 border border-white/15 hover:border-indigo-500/30 group transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 text-indigo-400" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-zinc-400 font-semibold">{contactContent.generalEnquiriesLabel}</div>
-                  <div className="text-base font-bold text-white group-hover:underline transition-colors mt-0.5">
+                  <div className="text-xs font-mono text-indigo-300 font-semibold">{contactContent.generalEnquiriesLabel}</div>
+                  <div className="text-base font-bold text-white group-hover:text-indigo-200 transition-colors mt-0.5">
                     {contactContent.email}
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function ContactSection() {
           <div className="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl border border-white/15 shadow-2xl bg-[#050505]">
             {submitted ? (
               <div className="text-center py-12 space-y-4">
-                <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto text-white">
+                <div className="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-white font-urbanist">Message Received</h3>
@@ -105,7 +105,7 @@ export default function ContactSection() {
                       placeholder="Jane Doe"
                       value={formState.name}
                       onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                      className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-400 transition-colors"
                     />
                   </div>
 
@@ -117,7 +117,7 @@ export default function ContactSection() {
                       placeholder="jane@company.com"
                       value={formState.email}
                       onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                      className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-400 transition-colors"
                     />
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function ContactSection() {
                     placeholder="General Enquiries"
                     value={formState.subject}
                     onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                    className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors"
+                    className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-400 transition-colors"
                   />
                 </div>
 
@@ -142,14 +142,14 @@ export default function ContactSection() {
                     placeholder="Your message..."
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                    className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white transition-colors resize-none"
+                    className="w-full bg-black border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-indigo-400 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-white text-black py-3.5 rounded-full font-semibold hover:bg-zinc-200 active:scale-[0.99] transition-all shadow-glow text-sm font-geist"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-white text-black py-3.5 rounded-full font-semibold hover:bg-zinc-200 active:scale-[0.99] transition-all shadow-[0_0_20px_rgba(255,255,255,0.2),0_0_30px_rgba(99,102,241,0.2)] text-sm font-geist"
                 >
                   {loading ? (
                     <span className="inline-block w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
